@@ -88,3 +88,9 @@ docker buildx build --platform linux/x86_64,linux/arm64 -t ghcr.io/thak1411/tail
 - CNI: Cilium 1.18.4
 - Tailscale: v1.90.9
 - Client & Server is in the same local network
+
+## License / redistribution
+
+- Base image `tailscale/tailscale` bundles the Tailscale client under the BSD 3-Clause License. A copy from upstream is included here as `LICENSE.tailscale` (see https://github.com/tailscale/tailscale/blob/main/LICENSE).
+- When publishing this derived image publicly (e.g., to GHCR/Docker Hub), provide the BSD 3-Clause notice (link or attach `LICENSE.tailscale`) alongside the image to satisfy the binary redistribution requirement.
+- Do not imply Tailscale’s endorsement or use their trademarks beyond factual reference to the base image.
