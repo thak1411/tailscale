@@ -1,0 +1,6 @@
+apiVersion: v2
+name: iperf3-server
+description: iperf3 server deployment for bandwidth testing
+type: application
+version: 0.1.0
+appVersion: "3"
