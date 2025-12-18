@@ -1,4 +1,4 @@
-FROM tailscale/tailscale:v1.90.9
+FROM tailscale/tailscale:v1.92.3
 
 # Add tooling required to toggle tso on the tailscale interface.
 RUN apk add --no-cache ethtool
