@@ -57,7 +57,7 @@ In my case. i used `tailscale-operator`'s helm chart to deploy Tailscale in my K
 ```yaml
 image:
   repository: ghcr.io/thak1411/tailscale
-  tag: v1.90.9
+  tag: v1.94.1
 ```
 
 ## Results
@@ -86,7 +86,7 @@ docker buildx build --platform linux/x86_64,linux/arm64 -t ghcr.io/thak1411/tail
 - OS: Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-88-generic x86_64)
 - Kubernetes: v1.33.5
 - CNI: Cilium 1.18.4
-- Tailscale: v1.90.9
+- Tailscale: v1.94.1
 - Client & Server is in the same local network
 
 ## License / redistribution
