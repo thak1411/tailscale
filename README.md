@@ -57,7 +57,7 @@ In my case. i used `tailscale-operator`'s helm chart to deploy Tailscale in my K
 ```yaml
 image:
   repository: ghcr.io/thak1411/tailscale
-  tag: v1.94.1
+  tag: v1.104.4
 ```
 
 ## Results
@@ -77,11 +77,15 @@ Both upload and download tests show more than 400Mbps, indicating that the netwo
 You can build this image by cloning this repository and running the following command in the directory containing the `Dockerfile`:
 
 ```bash
-docker buildx build --platform linux/x86_64 -t ghcr.io/thak1411/tailscale:<tag> .
-docker buildx build --platform linux/x86_64,linux/arm64 -t ghcr.io/thak1411/tailscale:<tag> . # for multi-arch build
+docker buildx build --platform linux/amd64 -t ghcr.io/thak1411/tailscale:v1.104.4 --load .
+docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/thak1411/tailscale:v1.104.4 --push . # for multi-arch publishing
 ```
 
+Publishing requires a multi-platform Buildx builder and authentication to GHCR (`docker login ghcr.io`). The image retains the TSO workaround and uses Tailscale v1.104.4. Publishing the image does not update existing Kubernetes deployments.
+
 ## My environment
+
+Environment used for the original performance measurements above:
 
 - OS: Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-88-generic x86_64)
 - Kubernetes: v1.33.5
